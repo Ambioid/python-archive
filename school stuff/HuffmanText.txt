@@ -1,0 +1,16 @@
+Huffman Coding is a technique of compressing data to reduce its size without losing any of the details. 
+It was first developed by David Huffman.
+Huffman Coding is generally useful to compress the data in which there are frequently occurring characters.
+Huffman coding first creates a tree using the frequencies of the character and then generates code for each character.
+Once the data is encoded, it has to be decoded. Decoding is done using the same tree.
+Huffman Coding prevents any ambiguity in the decoding process using the concept of prefix code ie. a code associated with a character should not be present in the prefix of any other code. The tree created above helps in maintaining the property.
+Huffman coding is done with the help of the following steps.
+1. Calculate the frequency of each character in the string.
+2. Sort the characters in increasing order of the frequency. These are stored in a priority queue Q.
+3. Make each unique character as a leaf node.
+4. Create an empty node Z. Assign the minimum frequency to the left child of Z and assign the second minimum frequency to the right child of Z. Set the value of the Z as the sum of the above two minimum frequencies.
+5. Remove these two minimum frequencies from Q and add the sum into the list of frequencies.
+6. Insert node Z into the tree.
+7. Repeat steps 3 to 5 for all the characters.
+8. For each non-leaf node, assign 0 to the left edge and 1 to the right edge.
+For sending the above string over a network, we have to send the tree as well as the above compressed-code.
